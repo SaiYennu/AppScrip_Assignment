@@ -1,0 +1,147 @@
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 60px 40px;
+  margin-top: 100px;
+}
+
+/* ===== TOP ===== */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #444;
+}
+
+.subscribe-form {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+}
+
+.subscribe-form button {
+  border: 1px solid #666;
+  color: #666;
+  padding: 0 20px;
+  background: none;
+  font-weight: 800;
+}
+
+/* ===== LINKS ===== */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 40px;
+}
+
+/* Titles */
+.footer-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footer-col h3 {
+  font-size: 16px;
+}
+
+/* Lists */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.footer-col li {
+  color: #ccc;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Social */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.payment-heading {
+  margin-top: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pay-tag {
+  border: 1px solid #444;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Accordion behavior */
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer-col {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+  }
+
+  .footer-col ul,
+  .social-section {
+    display: none;
+  }
+
+  .footer-col ul.open,
+  .social-section.open {
+    display: block;
+  }
+
+  /* Input full width */
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    width: 100%;
+  }
+
+  .subscribe-form button {
+    padding: 12px;
+  }
+}

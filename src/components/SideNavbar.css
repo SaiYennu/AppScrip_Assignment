@@ -1,0 +1,107 @@
+/* ===== COMMON ===== */
+
+.sidebar {
+  background: #fff;
+  padding: 20px;
+}
+
+.filter-group {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.filter-group summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.checkbox-list label {
+  display: block;
+  margin: 5px 0;
+}
+
+/* ===== DESKTOP SIDEBAR ===== */
+
+.desktop-sidebar {
+  width: 260px;
+  height: calc(100vh - 140px);
+  position: sticky;
+  top: 120px;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+
+.desktop-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.desktop-sidebar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* ===== MOBILE OVERLAY ===== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  z-index: 9999;
+}
+
+.mobile-sidebar {
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  overflow-y: auto;
+  background: white;
+  z-index: 10000;
+  animation: slideIn .3s ease;
+}
+
+.overlay-bg {
+  flex: 1;
+  background: rgba(0,0,0,.4);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes slideIn {
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+/* ===== HEADER ===== */
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.desktop-sidebar{
+display:none;
+}
+
+}
+
+/* ===== DESKTOP ===== */
+
+@media(min-width:769px){
+
+.overlay{
+display:none;
+}
+
+}

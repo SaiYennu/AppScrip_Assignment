@@ -1,38 +1,169 @@
-.App {
+:root {
+  --text-dark: #000;
+  --text-muted: #777;
+  --border: #e5e5e5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== HERO ===== */
+
+.hero {
   text-align: center;
+  padding: 60px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero h1 {
+  font-size: 40px;
+  font-weight: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ===== TOOLBAR ===== */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.toolbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-weight: 800;
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 20px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.filter-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ===== DROPDOWN ===== */
+
+.toolbar-right {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 240px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: #f5f5f5;
+}
+
+/* ===== MAIN LAYOUT ===== */
+
+.main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* ===== SIDEBAR WRAPPER ===== */
+
+.desktop-sidebar-wrapper {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+/* ===== GRID ===== */
+
+.grid-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  transition: 0.3s ease;
+}
+
+/* EXPANDED */
+
+.grid-container.expanded {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===== LOADER ===== */
+
+.loader {
+  text-align: center;
+  padding: 50px;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:1024px){
+
+  .grid-container{
+    grid-template-columns: repeat(2,1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .grid-container.expanded{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+  .toolbar{
+    padding:10px 20px;
+  }
+
+  .item-count{
+    display:none;
+  }
+
+  .main-layout{
+    flex-direction:column;
+    padding:20px;
+  }
+
+  .desktop-sidebar-wrapper{
+    display:none;
+  }
+
+  .grid-container{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+  .show-hide-filter{
+    display: none;
+  }
+
+
+}
+
+@media (min-width:768px){
+  .desktop-mode{
+    display: none;
+  }
+  .mobile-only{
+    display: none;
   }
 }

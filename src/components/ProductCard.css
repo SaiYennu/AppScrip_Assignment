@@ -1,0 +1,147 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* IMAGE */
+.image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1.2;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* BADGE */
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  border: 1px solid #f0f0f0;
+}
+
+/* OUT OF STOCK */
+.out-of-stock-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* DETAILS */
+.product-details {
+  margin-top: 10px;
+}
+
+.product-title {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* FOOTER */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 6px;
+}
+
+.pricing-note {
+  font-size: 10px;
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.sign-in-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #555;
+}
+
+.heart-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .image-container {
+    padding: 12px; /* smaller padding */
+  }
+
+  .product-title {
+    font-size: 12px;
+  }
+
+  .pricing-note {
+    font-size: 9px;
+  }
+
+  .heart-icon {
+    font-size: 18px;
+  }
+
+  .badge-new {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* desktop */
+  gap: 40px 20px;
+}
+
+/* ✅ TABLET */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ✅ MOBILE (VERY IMPORTANT) */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+  }
+}
